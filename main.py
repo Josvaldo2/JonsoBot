@@ -1,17 +1,16 @@
 import discord
+import json
 import keys
 
-respostas = {
-    "**EUGENIOOOOO**": "eae",
-    "eita bixo": "sexo"
-}
+with open("respostas.json") as f:
+    respostas = json.load(f)
 
 class bot(discord.Client):
     async def on_ready(self):
         print(f"{self.user} tá on")
+        print(respostas)
         
         await self.change_presence(status=discord.Status.online)
-        print(self.status)
     
     async def on_message(self, msg):
         if msg.author == self.user:
