@@ -1,0 +1,1 @@
+token = "" # Insira o token do seu bot aqui
